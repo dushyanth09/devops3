@@ -1,0 +1,149 @@
+[me@linuxbox ~]$ ls /bin > dirlist-bin.txt
+[me@linuxbox ~]$ ls /usr/bin > dirlist-usr-bin.txt
+[me@linuxbox ~]$ ls /sbin > dirlist-sbin.txt
+[me@linuxbox ~]$ ls /usr/sbin > dirlist-usr-sbin.txt
+[me@linuxbox ~]$ ls dirlist*.txt
+dirlist-bin.txt dirlist-sbin.txt dirlist-usr-sbin.txt dirlist-usr-bin.txt
+We can perform a simple search of our list of files like this:
+[me@linuxbox ~]$ grep bzip dirlist*.txt
+
+Metacharacters And Literals
+
+^ $ . [ ] { } - ? * + ( ) | \
+
+The Any Character
+
+grep -h '.zip' dirlist*.txt
+
+Anchors
+
+grep -h '^zip' dirlist*.txt
+
+grep -h 'zip$' dirlist*.txt
+
+what’s a five letter word whose third letter is ‘j’ and last letter is ‘r’ that means grep -i '^..j.r$' /usr/share/dict/words
+
+Bracket Expressions And Character Classes
+grep -h '[bg]zip' dirlist*.txt
+
+Negation
+grep -h '[^bg]zip' dirlist*.txt
+
+Traditional Character Ranges
+construct a regular expression that would find every file in our lists beginning with an upper case letter
+grep -h '^[ABCDEFGHIJKLMNOPQRSTUVWXZY]' dirlist*.txt
+grep -h '^[A-Z]' dirlist*.txt
+grep -h '^[A-Za-z0-9]' dirlist*.txt
+
+how do we actually include a dash character in a bracket expression
+grep -h '[A-Z]' dirlist*.txt
+grep -h '[-AZ]' dirlist*.txt
+
+
+Table 20-2: POSIX Character Classes
+Character Class Description
+[:alnum:] The alphanumeric characters. In ASCII, equivalent to:[A-Za-z0-9]
+[:word:] The same as [:alnum:], with the addition of the underscore(_) character.
+[:alpha:] The alphabetic characters. In ASCII, equivalent to:[A-Za-z]
+[:blank:] Includes the space and tab characters.
+[:cntrl:] The ASCII control codes. Includes the ASCII characters zero through thirty-one and 127.
+[:digit:] The numerals zero through nine.
+[:graph:] The visible characters. In ASCII, it includes characters 33through 126.
+[:lower:] The lowercase letters.
+[:punct:] The punctuation characters. In ASCII, equivalent to:[-!"#$%&'()*+,./:;<=>?@[\\\]_`{|}~]
+[:print:] The printable characters. All the characters in [:graph:]plus the space character.
+[:space:] The whitespace characters including space, tab, carriage return, newline, vertical tab, and form feed. In ASCII,equivalent to:[ \t\r\n\v\f]
+[:upper:] The upper case characters.
+[:xdigit:] Characters used to express hexadecimal numbers. In ASCII,equivalent to:[0-9A-Fa-f]
+
+
+ls /usr/sbin/[[:upper:]]*
+ls /usr/sbin/[[:lower:]]*
+
+POSIX Basic Vs. Extended Regular Expressions
+
+What’s the difference between BRE and ERE? It’s a matter of metacharacters. With
+BRE, the following metacharacters are recognized:
+^ $ . [ ] *
+All other characters are considered literals. With ERE, the following metacharacters (and
+their associated functions) are added:
+( ) { } ? + |
+
+
+Alternation
+
+[me@linuxbox ~]$ echo "AAA" | grep AAA
+[me@linuxbox ~]$ echo "BBB" | grep AAA
+
+[me@linuxbox ~]$ echo "AAA" | grep -E 'AAA|BBB'
+AAA
+[me@linuxbox ~]$ echo "BBB" | grep -E 'AAA|BBB'
+BBB
+[me@linuxbox ~]$ echo "CCC" | grep -E 'AAA|BBB'
+
+Notice that since this is an extended feature, we added the -E option to grep (though we could have just used the egrep program instead), and we enclosed the regular expression in quotes to prevent the shell from interpreting the
+vertical bar metacharacter as a pipe operator
+
+To combine alternation with other regular expression elements, we can use () to separate
+the alternation:
+[me@linuxbox ~]$ grep -Eh '^(bz|gz|zip)' dirlist*.txt
+This expression will match the filenames in our lists that start with either “bz”, “gz”, or “zip”. Had we left off the parentheses, the meaning of this regular expression :
+[me@linuxbox ~]$ grep -Eh '^bz|gz|zip' dirlist*.txt
+changes to match any filename that begins with “bz” or contains “gz” or contains “zip”.
+
+Quantifiers
+Extended regular expressions support several ways to specify the number of times an
+element is matched.
+
+? - Match An Element Zero Or One Time
+
+* - Match An Element Zero Or More Times
+starts with an uppercase letter, then contains any number
+of upper and lowercase letters and spaces, and ends with a period
+[me@linuxbox ~]$ echo "This works." | grep -E '[[:upper:]][[:upper:][:lower:] ]*\.'
+This works.
+[me@linuxbox ~]$ echo "This Works." | grep -E '[[:upper:]][[:upper:][:lower:] ]*\.'
+This Works.
+[me@linuxbox ~]$ echo "this does not" | grep -E '[[:upper:]][[:upper:][:lower:] ]*\.'
+[me@linuxbox ~]$
+
+
++ - Match An Element One Or More Times
+[me@linuxbox ~]$ echo "This that" | grep -E '^([[:alpha:]]+ ?)+$'
+This that
+[me@linuxbox ~]$ echo "a b c" | grep -E '^([[:alpha:]]+ ?)+$'
+a b c
+[me@linuxbox ~]$ echo "a b 9" | grep -E '^([[:alpha:]]+ ?)+$'
+[me@linuxbox ~]$ echo "abc d" | grep -E '^([[:alpha:]]+ ?)+$'
+[me@linuxbox ~]$
+
+[me@linuxbox ~]$ echo "(555) 123-4567" | grep -E '^\(?[0-9][0-9][0-9]\)? [0-9][0-9][0-9]$'
+(555) 123-4567
+[me@linuxbox ~]$ echo "555 123-4567" | grep -E '^\(?[0-9][0-9][0-9]\)? [0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]$'
+555 123-4567
+[me@linuxbox ~]$ echo "AAA 123-4567" | grep -E '^\(?[0-9][0-9][0-9]\)? [0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]$'
+
+Finding invalid phone numbers
+grep -Ev '^\([0-9]{3}\) [0-9]{3}-[0-9]{4}$' phonelist.txt
+
+Here we use the -v option to produce an inverse match so that we will only output the
+lines in the list that do not match the specified expression
+
+
+Searching For Files With locate
+
+The locate program supports both basic (the --regexp option) and extended (the --
+regex option) regular expressions. With it, we can perform many of the same
+operations that we performed earlier with our dirlist files:
+
+locate --regex 'bin/(bz|gz|zip)'
+
+Searching For Text In less And vim
+
+
+less phonelist.txt
+/^\([0-9]{3}\) [0-9]{3}-[0-9]{4}$
+
+vim, on the other hand, supports basic regular expressions, so our search expression
+would look like this:
+/([0-9]\{3\}) [0-9]\{3\}-[0-9]\{4\}
