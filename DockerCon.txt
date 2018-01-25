@@ -1,0 +1,236 @@
+https://github.com/estesp/examplectr
+Visual studio code for golang
+Run containerd examples using docker image.
+Try to understand the advances examples.
+
+Different cloud providers 
+   1.Their thoughts on kubernetes
+   2.Which container run times is going to be used in the future
+   3.How are hybrid clouds handled.
+   4.Should have a open source offering for hybrid clouds
+   5.Serverless computing vs Cloud Native applications.
+   6.Cloud Native Apps vs Enterprise Apps.
+   
+Service Mesh Libraries
+Linkerd
+Conduit
+NewStack news outlet.
+
+Kubernetes can be used to run different container run times.
+Containerd brings more container runtime Options for Kubernetes.
+rkt is one of them
+Event based programming models might need a specific container run times
+We need to decide container run times based on the programming model we are trying to solve
+
+Amazon EKS 
+Amazon will contribute back to Kubernetes
+
+
+https://github.com/box/kube-applier
+declarative configuration for kubernetes
+kubernetes box microservices maximum velocity
+
+Canary testing
+Advanced routinh
+Observability
+
+
+istio
+Brigade-Event driven scripting for kubernetes
+Kashti
+Grafana
+https://github.com/chzbrgr71/kube-con-2017
+Blue Green Deployments
+Branch push deploys into blue kub cluster
+Merge into master deploys into green kub cluster
+https://medium.com/@chzbrgr71/kubecon-2017-demo-istio-and-brigade-ci-cd-9db5ef15a942
+
+Distributed Tracing
+LightStep
+ServiceMesh
+OpenTracing
+Observing every RPC is great
+ServiceMesh Envoy
+
+https://github.com/brendandburns/metaparticles
+Standard Libs for Clud Native Apps
+Runtime Kuberntes
+Objects Containers
+
+
+https://github.com/openfaas/faas
+Democratizing tool set
+
+kubectl is the new ssh
+Seperate infrastruct configs like yaml from source repos
+inject your container info infrastructure repo
+grafana for what is going on in kubernetes.you do not need kubectl to monitor
+https://github.com/kelseyhightower
+
+Kubernetes system layers
+Kubernetes API 
+Kube Aggregator
+API server builder
+
+https://github.com/GoogleCloudPlatform/kube-metacontroller
+Stateful setsCa
+Certified Kubernetes conformance programming
+WebHooks
+Bring Machine Learning to Kubernetes
+Google experience of building microservices
+https://github.com/shtatfeld
+
+https://github.com/smarterclayton
+etcd3
+Terraform with Kubernetes
+HBO uses Kuberntes for Game of Thrones
+Elastic Load Balancing (ELB) is a load-balancing service for Amazon Web Services 
+Networking-Service,Ingress and LBs
+AWS load balancer
+NodePort + ELB+K8s SD
+kube-dns
+Networking-Service
+Elastic Load Balancing (ELB) is a load-balancing service for Amazon Web Services 
+
+
+Network Policy for Kubernetes
+Calico used as network policy by most cloud providers
+Virtual Private  Clouds
+Kubernetes Network Policy
+Istio ServiceMesh
+Kubernetes+Istio
+Calico combines Kubernetes+Istio
+Zero Trust Network Model
+github/projectcalcilco
+Tigera
+
+Google Cloud Platform
+Kubernetes Platform helps build other platforms
+
+
+Carig McLuckie
+Dev Productive Matters
+Multi Cloud is happening
+Enterprise is complicated
+
+Ingress
+Logging
+Monitoring
+CI/CD
+Security
+Stateful Services
+
+Deliver ops power tools
+Rally around conformance
+Formalize Extensibility
+Open end accisble framework for ornganizatrios to extend
+
+Kubernetes can be treated as kernel for cluster
+Kubernetes is still in infancy
+
+DataScience Infrastructure
+http://www.datadan.io/
+https://github.com/dwhitena
+
+
+http://data8.org/
+https://github.com/jupyterhub/jupyterhub
+
+https://github.com/arschles/kube-best-practices
+https://github.com/kubernetes/helm
+
+Stateful vs Stateless architectures
+How do we handle persistent data like github
+
+Clayton Coleman
+
+Cloud Native Landscape
+Linux Performance Tools Landscape
+
+Ruby On Rails
+
+2018
+Year of service mesh
+Envoy
+Condut
+Make microservices easier
+
+Data for everyone
+TensorFlow,Rad Analytics GPU Support Apache Spaerk workloads on Kubernetes
+Machine Learning
+
+Whither Serverless
+Integrate Servless Natively Apache OpenWhicsk fission,kubeless
+Event Driver Behavior,Functions
+
+Defining Apps
+Improve App Development and Config
+Helm3.0 kubecfg,ksonnet,kompose,kedge,app-def-wg
+
+Extensible and secure workload identity
+istio,spiffe, container-identify-wg,kerberos
+
+Policy Multi Tenancy Integration
+Open Policy Agent,LDAP,>Insert Policy Here>
+
+Better Containers
+cri-o,containerd,oci,kubevirt,hyperv,debug containers,katacontainers
+cri-o simple and faster container run for kubernetes roadmap for serveless arhitectures
+
+appscode/kubed
+heptio/ark
+cloudenativelabs/kube-router
+GoogleCloudPlatform/kube-metacontroller
+
+Bryan Grant
+Principle Engineer Google
+
+
+Control Plane Services
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+   
