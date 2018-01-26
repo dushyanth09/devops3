@@ -1,0 +1,103 @@
+1. Append a line after 'N'th line
+
+sed 'N a <LINE-TO-BE-ADDED>' FILE.txt
+sed '1 a #This is just a commented line' sedtest.txt
+
+While, to append a line after last line,
+
+sed '$ a This is the last line' sedtest.txt
+
+
+Modify original contents
+sed -i '$ a This is the last line' sedtest.txt
+
+
+2. Append Line using Regular Expression/Pattern
+
+sed '/PATTERN/ a <LINE-TO-BE-ADDED>' FILE.txt
+
+ sed '/5/ a #Next line is the 6th line, not this' sedtest.txt
+ 
+ 
+ sed - Inserting Lines in a File
+ 
+ sed 'N i <LINE-TO-BE-ADDED>' FILE.txt
+ 
+ sed '4 i #This is the extra line' sedtest.txt
+ 
+ ert a line before last line,
+ sed '$ i #Next line will be last line' sedtest.txt
+ 
+ 
+ 2. Insert lines using Regular expression
+ This will insert the line before every line where pattern match is found.
+ 
+ 
+ sed '/PATTERN/ i <LINE-TO-BE-ADDED>' FILE.txt
+ 
+ sed '/8/ i #This line is inserted using sed' sedtest.txt
+ 
+ 
+ 
+ sed - Delete Lines with Line Number
+ 
+ 1. Delete 'N'th line
+ 
+ sed 'N d' FILE.txt
+ 
+ Delete first line
+ sed '1 d' sedtest.txt
+ 
+ Remove last line
+ sed '$ d' sedtest.txt
+ 
+ 
+ Modify file
+ 
+ sed -i '5 d' sedtest.txt
+ 
+ 2. Delete all Lines starting from 'M'th up to 'N'th
+ 
+ sed 'M,N d' FILE.txt
+ 
+ o delete block of lines from 3rd line to 8th line.
+
+ 
+ sed '3,8 d' sedtest.txt
+ 
+ 
+ delete lines starting from 5th up to last line
+ 
+ sed '5,$ d' sedtest.txt
+ 
+ 
+ B. sed - Delete Lines using Regular Expression/Pattern
+ 
+ 1. Delete lines containing a specific Pattern
+ 
+ sed '/PATTERN/ d' FILE.txt
+ 
+ sed '/It/ d' sedtest.txt
+ 
+ 2. Delete all those lines not containing the Pattern
+ 
+ sed '/PATTERN/ !d' FILE.txt
+ 
+ 
+ 3. Delete block of lines starting from pattern matching line
+ 
+ sed '/PATTERN/,N d' FILE.txt
+ 
+ sed '/5/,8 d' sedtest.txt
+ 
+ starting from pattern matching line till the end
+ 
+ sed '/5/,$ d' sedtest.txt
+ 
+ 
+ Deleting all blank lines
+ 
+ sed '^$ d' FILE.txt
+ 
+ 
+ 
