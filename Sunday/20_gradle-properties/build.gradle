@@ -1,0 +1,5 @@
+assert project.exampleProp == 'myValue'
+print project.exampleProp 
+task printGradleProperty << {
+    println "Second property: $someOtherProp"
+}

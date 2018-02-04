@@ -1,0 +1,12 @@
+project.ext.myProp = 'myValue'
+
+ext {
+    someOtherProp = 123
+    x = 10
+}
+
+assert myProp == 'myValue'
+println project.someOtherProp
+println project.x
+ext.someOtherProp = 567
+

@@ -1,0 +1,138 @@
+Jul 27, 2017 7:39:06 PM org.apache.catalina.startup.ClassLoaderFactory validateFile
+WARNING: Problem with directory [C:\cygwin64\tmp\cargo\conf\common\classes], exists: [false], isDirectory: [false], canRead: [false]
+Jul 27, 2017 7:39:06 PM org.apache.catalina.startup.ClassLoaderFactory validateFile
+WARNING: Problem with directory [C:\cygwin64\tmp\cargo\conf\common\lib], exists: [false], isDirectory: [false], canRead: [false]
+Jul 27, 2017 7:39:06 PM org.apache.catalina.startup.ClassLoaderFactory validateFile
+WARNING: Problem with directory [C:\cygwin64\tmp\cargo\conf\shared\classes], exists: [false], isDirectory: [false], canRead: [false]
+Jul 27, 2017 7:39:06 PM org.apache.catalina.startup.ClassLoaderFactory validateFile
+WARNING: Problem with directory [C:\cygwin64\tmp\cargo\conf\shared\lib], exists: [false], isDirectory: [false], canRead: [false]
+Jul 27, 2017 7:39:06 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files\Java\jdk1.8.0_121\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\cygwin64\usr\local\bin;C:\cygwin64\bin;C:\gurobi702\win64\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\TortoiseGit\bin;C:\Program Files\Git\bin;C:\Program Files\PuTTY;C:\Program Files\Intel\WiFi\bin;C:\Program Files\Common Files\Intel\WirelessCommon;C:\gradle-4.0.1\bin;C:\apache-maven-3.3.9\bin;C:\TrainingDevelopmentSuite\vagrant\bin;C:\RTools\mingw_64\bin;C:\RTools\bin;C:\Program Files\R\R-3.3.3\bin;C:\Program Files\R\R-3.3.3\bin\x64;C:\Program Files\Notepad++;C:\Users\Keerthi\Anaconda3;C:\Users\Keerthi\Anaconda3\Scripts;C:\Users\Keerthi\Anaconda3\Library\bin;C:\TrainingDevelopmentSuite\cdk\bin;C:\TrainingDevelopmentSuite\vagrant\bin;C:\TrainingDevelopmentSuite\cygwin\bin;C:\TrainingDevelopmentSuite\virtualbox;C:\DevelopmentSuite\cdk\bin;C:\DevelopmentSuite\vagrant\bin;C:\DevelopmentSuite\cygwin\bin;C:\DevelopmentSuite\virtualbox;C:\Users\Keerthi\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Docker Toolbox;C:\Program Files\Boot2Docker for Windows;.
+Jul 27, 2017 7:39:06 PM org.apache.catalina.startup.SetAllPropertiesRule begin
+WARNING: [SetAllPropertiesRule]{Server/Service/Connector} Setting property 'emptySessionPath' to 'true' did not find a matching property.
+Jul 27, 2017 7:39:07 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-8080"]
+Jul 27, 2017 7:39:07 PM org.apache.coyote.AbstractProtocol init
+SEVERE: Failed to initialize end point associated with ProtocolHandler ["http-bio-8080"]
+java.net.BindException: Address already in use: JVM_Bind <null>:8080
+	at org.apache.tomcat.util.net.JIoEndpoint.bind(JIoEndpoint.java:406)
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:610)
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:429)
+	at org.apache.coyote.http11.AbstractHttp11JsseProtocol.init(AbstractHttp11JsseProtocol.java:119)
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:981)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:559)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:814)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:633)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:658)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:281)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:450)
+Caused by: java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:375)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at java.net.ServerSocket.<init>(ServerSocket.java:181)
+	at org.apache.tomcat.util.net.DefaultServerSocketFactory.createSocket(DefaultServerSocketFactory.java:49)
+	at org.apache.tomcat.util.net.JIoEndpoint.bind(JIoEndpoint.java:393)
+	... 17 more
+
+Jul 27, 2017 7:39:07 PM org.apache.catalina.core.StandardService initInternal
+SEVERE: Failed to initialize connector [Connector[HTTP/1.1-8080]]
+org.apache.catalina.LifecycleException: Failed to initialize component [Connector[HTTP/1.1-8080]]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:106)
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:559)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:814)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:633)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:658)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:281)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:450)
+Caused by: org.apache.catalina.LifecycleException: Protocol handler initialization failed
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:983)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	... 12 more
+Caused by: java.net.BindException: Address already in use: JVM_Bind <null>:8080
+	at org.apache.tomcat.util.net.JIoEndpoint.bind(JIoEndpoint.java:406)
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:610)
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:429)
+	at org.apache.coyote.http11.AbstractHttp11JsseProtocol.init(AbstractHttp11JsseProtocol.java:119)
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:981)
+	... 13 more
+Caused by: java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:375)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at java.net.ServerSocket.<init>(ServerSocket.java:181)
+	at org.apache.tomcat.util.net.DefaultServerSocketFactory.createSocket(DefaultServerSocketFactory.java:49)
+	at org.apache.tomcat.util.net.JIoEndpoint.bind(JIoEndpoint.java:393)
+	... 17 more
+
+Jul 27, 2017 7:39:07 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Jul 27, 2017 7:39:07 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 714 ms
+Jul 27, 2017 7:39:07 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Jul 27, 2017 7:39:07 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.32
+Jul 27, 2017 7:39:07 PM org.apache.catalina.startup.HostConfig deployWAR
+INFO: Deploying web application archive C:\cygwin64\tmp\cargo\conf\webapps\cargocpc.war
+Jul 27, 2017 7:39:08 PM org.apache.catalina.util.SessionIdGenerator createSecureRandom
+INFO: Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [144] milliseconds.
+Jul 27, 2017 7:39:08 PM org.apache.catalina.startup.HostConfig deployWAR
+INFO: Deploying web application archive C:\cygwin64\tmp\cargo\conf\webapps\todo.war
+Jul 27, 2017 7:39:09 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\cygwin64\tmp\cargo\conf\webapps\host-manager
+Jul 27, 2017 7:39:09 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory C:\cygwin64\tmp\cargo\conf\webapps\manager
+Jul 27, 2017 7:39:09 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Jul 27, 2017 7:39:09 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 2562 ms
+Jul 27, 2017 7:39:21 PM org.apache.catalina.startup.ClassLoaderFactory validateFile
+WARNING: Problem with directory [C:\cygwin64\tmp\cargo\conf\common\classes], exists: [false], isDirectory: [false], canRead: [false]
+Jul 27, 2017 7:39:21 PM org.apache.catalina.startup.ClassLoaderFactory validateFile
+WARNING: Problem with directory [C:\cygwin64\tmp\cargo\conf\common\lib], exists: [false], isDirectory: [false], canRead: [false]
+Jul 27, 2017 7:39:22 PM org.apache.catalina.startup.ClassLoaderFactory validateFile
+WARNING: Problem with directory [C:\cygwin64\tmp\cargo\conf\shared\classes], exists: [false], isDirectory: [false], canRead: [false]
+Jul 27, 2017 7:39:22 PM org.apache.catalina.startup.ClassLoaderFactory validateFile
+WARNING: Problem with directory [C:\cygwin64\tmp\cargo\conf\shared\lib], exists: [false], isDirectory: [false], canRead: [false]
+Jul 27, 2017 7:39:23 PM org.apache.catalina.startup.Catalina stopServer
+SEVERE: Catalina.stop: 
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at org.apache.catalina.startup.Catalina.stopServer(Catalina.java:499)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.stopServer(Bootstrap.java:371)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:453)
+
