@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.manning.gia.todo.repository.InMemoryToDoRepositoryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-02-08T21:58:49" hostname="DESKTOP-UAOJCAT" time="0.0">
+  <properties/>
+  <testcase name="testInsertToDoItem" classname="com.manning.gia.todo.repository.InMemoryToDoRepositoryTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
