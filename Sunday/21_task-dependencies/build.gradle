@@ -8,4 +8,7 @@ task printVersion(dependsOn: [second, first]) << {
 }
 
 task third << { println "third" }
-third.dependsOn('printVersion')     
+third.dependsOn('printVersion')
+
+task fourth << { println "fourth" }
+fourth.dependsOn('second')     
